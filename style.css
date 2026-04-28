@@ -1,29 +1,84 @@
+/* =========================
+   GLOBAL (BODY)
+   =========================
+   Ce bloc sert à configurer toute la page.
+   On utilise Flexbox car c’est la méthode la plus simple et fiable
+   pour centrer un élément (la calculatrice) horizontalement ET verticalement.
+*/
 body {
-    background: hwb(240 67% 10%);
+    background: hwb(240 9% 87%);
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+
+
+/* =========================
+   TITRE
+   =========================
+   Ce bloc stylise le titre pour améliorer la lisibilité
+   et créer une hiérarchie visuelle au-dessus de la calculatrice.
+*/
 h2  {
-    color: #ffffff;
+    color: #f5f5f5;
     margin-bottom: 15px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
 }
+
+
+/* =========================
+   BOUTONS (STYLE GLOBAL)
+   =========================
+   Ce bloc définit l’apparence de tous les boutons.
+   On utilise des tailles fixes et un border-radius à 50%
+   pour garantir des boutons parfaitement ronds et uniformes.
+*/
 button {
-    border-radius: 15px;
+    border-radius: 50%;
     border : none;
+    width: 60px;
+    height: 60px;
     padding: 15px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
 }
+
+
+/* =========================
+   BOUTONS OPERATEURS (HOVER)
+   =========================
+   Ce bloc applique un effet visuel uniquement aux opérateurs.
+   Cela permet de les distinguer des boutons numériques
+   et d’améliorer l’expérience utilisateur.
+*/
+button.operator-btn:hover{
+    background: hsl(169, 90%, 32%);
+}
+
+
+/* =========================
+   GRILLE DES TOUCHES
+   =========================
+   On utilise CSS Grid car il est mieux adapté que Flexbox
+   pour organiser des éléments en lignes et colonnes fixes (comme une calculatrice).
+*/
 .keys {
     display: grid;
     grid-template-columns: repeat(4, 68px);
     gap: 10px;
 }
+
+
+/* =========================
+   CONTENEUR CALCULATRICE
+   =========================
+   Ce bloc regroupe toute la calculatrice.
+   Il sert à créer un espace visuel distinct avec un fond sombre,
+   des bordures arrondies et un padding pour le confort visuel.
+*/
 .calculator {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -31,7 +86,17 @@ button {
     border-radius: 15px;
     width: 300px;
     padding: 20px;
+    border: 2px solid rgb(79, 78, 76);
 }
+
+
+/* =========================
+   ECRAN D’AFFICHAGE
+   =========================
+   Ce bloc représente l’écran de la calculatrice.
+   Le texte est aligné à droite pour imiter une vraie calculatrice.
+   La grande taille de police améliore la lisibilité.
+*/
 #display {
     width: 93%;
     background: hsl(0, 0%, 30%);
@@ -46,21 +111,59 @@ button {
     overflow: hidden;
     border-color: rgb(240,228,228);
 }
+
+
+/* =========================
+   EFFET HOVER GLOBAL
+   =========================
+   Fournit un retour visuel à l’utilisateur lorsqu’il survole un bouton,
+   ce qui améliore l’interactivité et l’ergonomie.
+*/
 button:hover{
     background: hsl(0, 0%, 60%);
 }
-button :active {
+
+
+/* =========================
+   EFFET AU CLIC
+   =========================
+   Simule un bouton pressé pour rendre l’interface plus réaliste.
+*/
+button:active {
     background: hsl(0, 0%, 60%);
 }
+
+
+/* =========================
+   BOUTONS OPERATEURS
+   =========================
+   Ce bloc différencie visuellement les opérateurs (+, -, ×, ÷)
+   grâce à une couleur spécifique pour une meilleure UX.
+*/
 button.operator-btn {
     background: hsl(319, 89%, 67%);
     color: rgb(255, 255, 255);
 }
+
+
+/* =========================
+   BOUTON EGAL
+   =========================
+   Le bouton "=" est mis en avant car c’est l’action principale.
+   On lui donne une couleur différente pour attirer l’attention.
+*/
 .equal-btn {
     color: rgb(255, 255, 255);
     background-color: rgb(208, 208, 13);
-    width: 145px; ;
+    border-radius: 10px;
 }
+
+
+/* =========================
+   HOVER BOUTON EGAL
+   =========================
+   Effet dynamique pour renforcer l’interaction utilisateur.
+*/
 .equal-btn:hover {
     background-color: hsl(319, 89%, 67%);
 }

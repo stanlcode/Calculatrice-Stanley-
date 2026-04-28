@@ -1,37 +1,82 @@
 <!DOCTYPE html>
+<!-- Définit le type HTML5 pour éviter les erreurs -->
+
 <html lang="en">
+<!-- Langue du document (utile pour accessibilité) -->
+
 <head>
     <meta charset="UTF-8">
+    <!-- Permet d'afficher les caractères spéciaux -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Rend la page adaptée aux écrans mobiles -->
+
     <title>Calculatrice Stanl</title>
+    <!-- Nom affiché dans l’onglet -->
+
     <link rel="stylesheet" href="style.css">
+    <!-- Relie le fichier CSS pour le design -->
 </head>
+
 <body>
+    <!-- Conteneur principal pour regrouper la calculatrice -->
     <div class="calculator">
+
+        <!-- Titre de l'application -->
         <h2>Calculatrice Stanl </h2>
+
+        <!-- Écran : input utilisé pour manipuler facilement avec JS -->
         <input id="display" readonly>
+        <!-- readonly empêche l’utilisateur d’écrire directement -->
+
+        <!-- Zone des boutons -->
         <div class="keys">
-            <button onclick="insert('+')" class="operator-btn">+</button>
+
+            <!-- Boutons chiffres : onclick pour action rapide -->
             <button onclick="insert('7')" class="number-btn">7</button>
             <button onclick="insert('8')" class="number-btn">8</button>
             <button onclick="insert('9')" class="number-btn">9</button>
-            <button onclick="insert('-')" class="operator-btn">-</button>
+
+            <!-- Opérateurs avec style différent -->
+            <button onclick="insert('+')" class="operator-btn">+</button>
+
             <button onclick="insert('4')" class="number-btn">4</button>
             <button onclick="insert('5')" class="number-btn">5</button>
             <button onclick="insert('6')" class="number-btn">6</button>
-            <button onclick="insert('*')" class="operator-btn">x</button>
+            <button onclick="insert('-')" class="operator-btn">-</button>
+
             <button onclick="insert('1')" class="number-btn">1</button>
             <button onclick="insert('2')" class="number-btn">2</button>
             <button onclick="insert('3')" class="number-btn">3</button>
-            <button onclick="insert('/')" class="operator-btn">/</button>
+
+            <!-- "*" utilisé car JS ne comprend pas "x" -->
+            <button onclick="insert('*')" class="operator-btn">x</button>
+
             <button onclick="insert('0')" class="number-btn">0</button>
             <button onclick="insert('.')" class="number-btn">.</button>
+
+            <!-- Change le signe du nombre -->
             <button onclick="toggleSign()">+/-</button>
+
+            <button onclick="insert('/')" class="operator-btn">/</button>
+
+            <!-- Efface tout -->
             <button onclick="clearDisplay()" class="operator-btn">C</button>
+
+            <!-- Supprime le dernier caractère -->
             <button onclick="Del()" class="operator-btn">Del</button>
+
+            <!-- Modulo -->
+            <button onclick="insert('%')" class="operator-btn">%</button>
+
+            <!-- Lance le calcul -->
             <button onclick="calculate()" class="equal-btn">=</button>
+
         </div>
     </div>
+
+    <!-- JS placé en bas pour éviter les erreurs de chargement -->
     <script src="script.js"></script>
+
 </body>
 </html>
